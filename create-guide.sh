@@ -1,11 +1,13 @@
 
 GUIDE_NAME="$1"
+PROFILE="$2"
+PROFILE_NAME="$3"
 
 if [[ -n $GUIDE_NAME ]]; then
     mkdir $GUIDE_NAME
     cd $GUIDE_NAME
 
-    grails create-app $GUIDE_NAME
+    grails create-app $GUIDE_NAME $PROFILE $PROFILE_NAME
     mv $GUIDE_NAME initial
     mkdir complete
     cp -rf initial/* complete/
